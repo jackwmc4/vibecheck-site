@@ -1,0 +1,53 @@
+:root {
+  --bg: #ffffff;
+  --text: #1c1c1e;
+  --subtle: #5b5b63;
+  --accent: #4338ca;
+  --card: #f4f4f8;
+  --line: #dcdce3;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101014;
+    --text: #f2f2f7;
+    --subtle: #a9a9b3;
+    --accent: #8f8cff;
+    --card: #1b1b22;
+    --line: #34343e;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1.0625rem/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+}
+a { color: var(--accent); text-underline-offset: 0.15em; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; background: var(--bg); padding: 0.5rem 1rem; z-index: 10; }
+header, main, footer { max-width: 44rem; margin: 0 auto; padding: 0 1rem; }
+header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1.5rem; padding-top: 1.25rem; padding-bottom: 1.25rem; }
+.brand { font-weight: 700; font-size: 1.25rem; color: var(--text); text-decoration: none; }
+nav { display: flex; gap: 1.25rem; }
+nav a[aria-current="page"] { color: var(--text); font-weight: 600; text-decoration: none; }
+h1 { font-size: 2.25rem; line-height: 1.15; margin: 1.5rem 0 0.75rem; }
+h2 { font-size: 1.4rem; line-height: 1.25; margin: 2.25rem 0 0.5rem; }
+h3 { font-size: 1.1rem; margin: 1.5rem 0 0.25rem; }
+p, ul { margin: 0.5rem 0 1rem; }
+li { margin: 0.35rem 0; }
+.lead { font-size: 1.25rem; color: var(--subtle); }
+.subtle { color: var(--subtle); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.25rem; margin: 1.25rem 0; }
+.card > :first-child { margin-top: 0; }
+.card > :last-child { margin-bottom: 0; }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem; margin: 2rem 0; padding: 0; list-style: none; }
+.shots img { width: 100%; height: auto; border-radius: 22px; border: 1px solid var(--line); display: block; }
+.shots figcaption { text-align: center; color: var(--subtle); font-size: 0.95rem; margin-top: 0.5rem; }
+footer { border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 1.25rem; padding-bottom: 2.5rem; color: var(--subtle); font-size: 0.95rem; }
+footer a { color: var(--subtle); }
+dt { font-weight: 600; margin-top: 1rem; }
+dd { margin: 0.25rem 0 0; }
+@media (max-width: 30rem) { h1 { font-size: 1.85rem; } }
